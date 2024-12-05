@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<head>
+  <title>Sự kiện oninput</title>
+</head>
+<body>
+<input id="display" type="text" oninput="onInPut()">
+<p id="suKien"></p>
+<script>
+  function onInPut(){
+    let name =document.getElementById("display").value;
+    document.getElementById("suKien").innerText = name
+  }
+</script>
+</body>
+</html>

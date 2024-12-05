@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="display" type="text">
+<input id=display1 type="text">
+<button onclick="total()">Cộng</button>
+<button onclick="signal()">Trừ</button>
+<p id="result"></p>
+<h2>Result</h2>
+<script>
+    function total() {
+        let soThuNhat = parseFloat(document.getElementById("display").value);
+        let sothuHai = parseFloat(document.getElementById("display1").value);
+        let total = soThuNhat + sothuHai
+        document.getElementById("result").innerHTML = total;
+    }
+    function signal() {
+        let soThuNhat = parseFloat(document.getElementById("display").value);
+        let sothuHai = parseFloat(document.getElementById("display1").value);
+        let signal = soThuNhat - sothuHai
+        document.getElementById("result").innerHTML = signal;
+    }
+</script>
+</body>
+</html>

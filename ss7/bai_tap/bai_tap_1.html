@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập điểm môn toán");
+    while (a < 0 || a > 10 || parseFloat(a) !== a) {
+        a = +prompt("Nhập lại điểm môn toán")
+    }
+    let b = +prompt("Nhập điểm môn lý");
+    while (b < 0 || b > 10 || parseFloat(b) !== b) {
+        b = +prompt("Nhập lại điểm môn lý");
+    }
+    let c = +prompt("Nhập điểm môn hóa");
+    while (c < 0 || c > 10 || parseFloat(c) !== c) {
+        c = +prompt("Nhập lại điểm môn hóa")
+    }
+    let avg = (a + b + c) / 3
+    alert(avg)
+</script>
+</body>
+</html>
