@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt("Nhập vào X của phương trình");
+  while (isNaN(a)){
+    a = prompt("Nhập lại");
+  }
+  let b = prompt("Nhập vào Y của phương trình");
+  while (isNaN(b)){
+    b = prompt("Nhập lại");
+  }
+  let c = prompt("Nhập vào D (hằng số của phương trình)");
+  while (isNaN(c)){
+    c = prompt("Nhập lại");
+  }
+  let delTa = (b*b)-4*a*c;
+  if (delTa>0){
+      document.write("phương trình có hai nghiệm phân biệt X1: "+ (-b+Math.sqrt(delTa))/(2*a) + "Và X2: "+ (-b-Math.sqrt(delTa))/(2*a))
+  }else if (delTa<0){
+      document.write("Phương trình vô nghiệm");
+  }else if (delTa===0){
+      document.write("Phương trình có nghiệm kép X1=X2= "+ -b/(2*a))
+  }
+</script>
+</body>
+</html>

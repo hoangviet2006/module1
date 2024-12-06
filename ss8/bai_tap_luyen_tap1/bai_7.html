@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập số phút đã gọi")
+    while (a < 0 || a > 200 || parseInt(a) !== a) {
+        a = +prompt("nhập lại")
+    }
+    if (a<=20){
+        cuocPhi = a*1000;
+        alert(cuocPhi);
+    }else if (a<=50){
+        cuocPhi = a*3000;
+        alert(cuocPhi);
+    }else if (a<=100){
+        cuocPhi =  a*5000;
+        alert(cuocPhi);
+    }else if (a<=150){
+        cuocPhi = a*7000;
+        alert(cuocPhi);
+    }else {
+        cuocPhi = a*10000;
+        alert(cuocPhi)
+    }
+</script>
+</body>
+</html>

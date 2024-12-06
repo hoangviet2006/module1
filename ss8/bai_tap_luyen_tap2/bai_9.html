@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập cạnh a");
+    while (isNaN(a)) {
+        a = +prompt("Nhập lại");
+    }
+    let b = +prompt("nhập cạnh b");
+    while (isNaN(b)) {
+        b = +prompt("nhập lại")
+    }
+    let c = +prompt("nhập cạnh c");
+    while (isNaN(c)) {
+        c = +prompt("nhập lại");
+    }
+    if (a <= 0 || b <= 0 || c <= 0) {
+        document.write("đây không phải là một tam giác");
+    } else if (a < b + c && b < a + c && c < a + b) {
+        document.write("đây là một tam giác");
+    } else {
+        document.write("đây không phải là một tam giác");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập vào số a");
+    while (isNaN(a)) {
+        a = prompt("Nhập lại");
+    }
+    let b = +prompt("Nhập vào số b");
+    while (isNaN(b)) {
+        b = prompt("Nhập lại");
+
+    }
+    if (a % b === 0) {
+        alert("a chia hết cho b");
+    } else {
+        alert("a không chia hết cho b");
+    }
+</script>
+</body>
+</html>

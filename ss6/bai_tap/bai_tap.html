@@ -9,14 +9,17 @@
     let a = +prompt("Nhập vào điểm toán");
     while (a < 0 || a > 10 || parseFloat(a) !== a) {
         a = +prompt("Nhập lại điểm toán");
+        break;
     }
     let b = +prompt("Nhập vào điểm lý");
     while (b < 0 || b > 10 || parseFloat(b) !== b) {
         b = +prompt("Nhập lại điểm lý");
+        break;
     }
     let c = +prompt("Nhập vào điểm hóa");
     while (c < 0 || c > 10 || parseFloat(c) !== c) {
         c = +prompt("Nhập lại điểm hóa");
+        break;
     }
     let sum = a + b + c;
     alert(" Tổng điểm ba môn là: " + sum);

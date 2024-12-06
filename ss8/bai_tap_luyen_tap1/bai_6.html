@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập vào số hàng bạn đã bán được");
+    let donGia = 35000;
+
+    while (a>100|| parseInt(a)!==a){
+        a = +prompt("Nhập lại")
+    }
+    if (a<=10){
+        hoaHong = donGia*(10/100);
+        alert(hoaHong);
+    }else if (a<=20){
+        hoaHong = donGia*(15/100);
+        alert(hoaHong);
+    }else if (a<30){
+        hoaHong = donGia*(25/100);
+            alert(hoaHong);
+    }else if (a<=50){
+        hoaHong = donGia*(30/100);
+            alert(hoaHong);
+    }else {
+        hoaHong = donGia*(40/100);
+        alert(hoaHong);
+    }
+</script>
+</body>
+</html>

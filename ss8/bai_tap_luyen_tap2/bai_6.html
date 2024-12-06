@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt("Nhập vào X của phương trình:")
+  while (isNaN(a)){
+    a = prompt("Nhập lại");
+  }
+  let b = prompt("Nhập vào D( hằng  số của phương trình)")
+  while (isNaN(b)){
+    b = prompt("nhập lại");
+  }
+  if (b>0){
+    let nghiemPt = -b/a;
+    alert("Nghiêm của phương trình vừa nhập là: "+ nghiemPt);
+  }else {
+    let nghiemPt = (b*-1)/a;
+    alert("Nghiêm của phương trình vừa nhập là: " + nghiemPt);
+  }
+</script>
+</body>
+</html>

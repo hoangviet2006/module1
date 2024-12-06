@@ -9,6 +9,9 @@
 <input id=display1 type="text">
 <button onclick="total()">Cộng</button>
 <button onclick="signal()">Trừ</button>
+<button onclick="core()">Nhân</button>
+<button onclick="divide()">Chia</button>
+
 <p id="result"></p>
 <h2>Result</h2>
 <script>
@@ -22,6 +25,18 @@
         let soThuNhat = parseFloat(document.getElementById("display").value);
         let sothuHai = parseFloat(document.getElementById("display1").value);
         let signal = soThuNhat - sothuHai
+        document.getElementById("result").innerHTML = signal;
+    }
+    function core(){
+        let soThuNhat = parseFloat(document.getElementById("display").value);
+        let sothuHai = parseFloat(document.getElementById("display1").value);
+        let signal = soThuNhat * sothuHai
+        document.getElementById("result").innerHTML = signal;
+    }
+    function divide(){
+        let soThuNhat = parseFloat(document.getElementById("display").value);
+        let sothuHai = parseFloat(document.getElementById("display1").value);
+        let signal = soThuNhat / sothuHai
         document.getElementById("result").innerHTML = signal;
     }
 </script>

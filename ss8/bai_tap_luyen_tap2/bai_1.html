@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập độ C cần chuyển sang độ F");
+    while (isNaN(a)){
+        a = prompt("Nhập lại");
+    }
+    let chuyenDoi = (a*9/5)+32;
+    alert( "từ " + a + " độ C chuyển sang thành  :" +chuyenDoi +" độ F");
+</script>
+</body>
+</html>
