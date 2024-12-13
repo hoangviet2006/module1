@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="doanSo()">Bắt Đầu</button>
+<script>
+    function doanSo() {
+        let number = prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?");
+        let random = Math.round(Math.random() * number);
+        alert(random)
+        let nhapSo = prompt("Nhập số bạn đoán");
+        for (let i = 0; i <3; i++) {
+            if (nhapSo == random) {
+                alert("OK")
+                break;
+            } else if (nhapSo>random){
+                nhapSo = prompt("Số bạn nhập lơn hơn kq");
+            }else {
+                nhapSo = prompt("Số bạn nhập nhỏ hơn kq");
+            }if(i===1){
+                alert("bạn đã hết lượt kết quả là: "+ random)
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

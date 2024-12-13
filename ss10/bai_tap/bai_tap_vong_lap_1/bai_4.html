@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let f1=0;
+  let f2=1;
+  let arr = [];
+  for (let i = 0; i<500;i++){
+    let f3 =f1+f2;
+    f1=f2;
+    f2=f3;
+    if (f3%5===0){
+        arr.push(f3)
+    }
+  }
+  document.write(arr[0])
+</script>
+</body>
+</html>

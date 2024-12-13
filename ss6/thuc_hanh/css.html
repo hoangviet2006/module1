@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      background-color: #388e3c;
+    }
+
+    #display {
+      margin-top: 20px;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    table td {
+      word-wrap: break-word;
+      max-width: 200px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quản Lý Học Viên</h1>
+  <button onclick="addStudent()">Thêm Học Viên</button>
+  <button onclick="deleteStudent()">Xóa Học Viên</button>
+  <button onclick="editStudent()">Chỉnh Sửa Học Viên</button>
+
+  <div id="display"></div>
+</div>
+
+<script>
+  class Student {
+    constructor(id, name, clas, date) {
+      this.id = id;
+      this.name = name;
+      this.clas = clas;
+      this.date = date;
+    }
+
+    setId(id) {
+      this.id = id;
+    }
+
+    getId() {
+      return this.id;
+    }
+
+    setName(name) {
+      this.name = name;
+    }
+
+    getName() {
+      return this.name;
+    }
+
+    setClas(clas) {
+      this.clas = clas;
+    }
+
+    getClas() {
+      return this.clas;
+    }
+
+    setDate(date) {
+      this.date = date;
+    }
+
+    getDate() {
+      return this.date;
+    }
+  }
+
+  let student1 = new Student(1, "Hoang", "C10", 2006);
+  let student2 = new Student(2, "Viet", "C11", 2005);
+  let studentList = [student1, student2];
+  display();
+
+  function addStudent() {
+    let newId = prompt("Nhập Id của Học Viên");
+    let newName = prompt("Nhập Tên của Học Viên");
+    let newClas = prompt("Nhập Lớp của Học Viên");
+    let newDate = prompt("Nhập Năm Sinh của Học Viên");
+    let student = new Student(newId, newName, newClas, newDate);
+    studentList.push(student);
+    display();
+  }
+
+  function deleteStudent() {
+    let idHocVien = prompt("Nhập Id Học Viên");
+    let timIndex = -1;
+    for (let i = 0; i < studentList.length; i++) {
+      if (studentList[i].id == idHocVien) {
+        timIndex = i;
+        break;
+      }
+    }
+    if (timIndex !== -1) {
+      let conf = confirm("Bạn có muốn xóa?");
+      if (conf) {
+        studentList.splice(timIndex, 1);
+        display();
+      }
+    } else {
+      alert("Không tìm thấy id");
+    }
+  }
+
+  function editStudent() {
+    let idHocVien = prompt("Nhập Id cần chỉnh sửa");
+    let timIndex = -1;
+    for (let i = 0; i < studentList.length; i++) {
+      if (studentList[i].id == idHocVien) {
+        timIndex = i;
+        break;
+      }
+    }
+    if (timIndex !== -1) {
+      let newName = prompt("Nhập Tên Mới Của Học Viên");
+      let newClas = prompt("Nhập Lớp Mới Của Học Viên");
+      let newDate = prompt("Nhập Năm Sinh Mới Của Học Viên");
+      studentList[timIndex].setName(newName);
+      studentList[timIndex].setClas(newClas);
+      studentList[timIndex].setDate(newDate);
+      display();
+    } else {
+      alert("Không tìm thấy Id");
+    }
+  }
+
+  function display() {
+    let tableString = `
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Lớp</th>
+                        <th>Năm Sinh</th>
+                    </tr>
+            `;
+    for (let i = 0; i < studentList.length; i++) {
+      tableString += `
+                    <tr>
+                        <td>${studentList[i].id}</td>
+                        <td>${studentList[i].name}</td>
+                        <td>${studentList[i].clas}</td>
+                        <td>${studentList[i].date}</td>
+                    </tr>
+                `;
+    }
+    tableString += "</table>";
+    document.getElementById("display").innerHTML = tableString;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  a = prompt("Nhập vào độ dài mảng");
+    while (isNaN(a)&& a<=0){
+        a = prompt(" nhập lại");
+    }
+    let arr = [];
+    for (let i = 1; i<=a; i++){
+        let nhapSo = prompt(" Nhập phần tử thứ : " +i)
+        arr.push(nhapSo);
+    }
+    soChinhPhuong();
+
+    function soChinhPhuong() {
+        let kiemTra = true;
+        for (let i = 0; i < arr.length; i++) {
+            let canBacHai = Math.sqrt(arr[i]);
+            if (canBacHai !== Math.floor(canBacHai)){
+                kiemTra = false;
+                break;
+            }
+
+        }
+        if (kiemTra){
+            alert("Tất cả Là số chính phương")
+        }else {
+            alert("Có số không phải là số chính phương")
+        }
+
+    }
+
+</script>
+</body>
+</html>

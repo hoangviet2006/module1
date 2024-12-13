@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập số cần kiểm tra");
+    let check = true;
+    for (let i = 0; i < a; i++) {
+        if (a == 2) {
+            check = true;
+        } else {
+            for (let j = 2; j < i; j++) {
+                if (a % j === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+    }
+    if (check) {
+        alert(a + " là Số Nguyên  Tố")
+    } else {
+        alert(a + " Không Phải Là Số Nguyên Tố")
+    }
+</script>
+</body>
+</html>

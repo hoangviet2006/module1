@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Management</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #ecf0f1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 95%;
+            max-width: 1000px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Button styles */
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 15px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #2980b9;
+            transform: scale(0.98);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+            text-transform: uppercase;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f6f9;
+        }
+
+        tr:hover {
+            background-color: #ecf0f1;
+            transition: background-color 0.3s ease;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alert and Error messages */
+        .alert {
+            color: #e74c3c;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Quản Lý Sản Phẩm Điện Thoại</h1>
+    <button onclick="addPhone()">THÊM SẢN PHẨM</button>
+    <button onclick="editPhone()">SỬA SẢN PHẨM</button>
+    <button onclick="deletePhone()">XÓA SẢN PHẨM</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    class Phone {
+        constructor(id, name, price) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+    }
+
+    let phone1 = new Phone(1, "Iphone", 9999999);
+    let phone2 = new Phone(2, "SamSum", 8888888);
+    let phone3 = new Phone(3, "ViVo", 7777777);
+    let phone4 = new Phone(4, "NoKiA", 6666666);
+    let phoneList = [phone1, phone2, phone3, phone4];
+    display();
+
+    function addPhone() {
+        let newId = prompt("Nhập ID Sản Phẩm");
+        while (isNaN(newId) || newId <= 0) {
+            newId = prompt("Nhập Lại ID");
+        }
+        let newName = prompt("Nhập Tên Sản Phẩm");
+        let newPrice = prompt("Nhập Giá Thành Sản Phẩm");
+        while (isNaN(newPrice) || newPrice <= 0) {
+            newPrice = prompt("Nhập lại giá sản phẩm");
+        }
+        let phone = new Phone(newId, newName, newPrice);
+        phoneList.push(phone);
+        display();
+    }
+
+    function editPhone() {
+        let timId = prompt("Nhập ID cần sửa");
+        while (isNaN(timId || timId <= 0)) {
+            timId = prompt("Nhập lại ID Cần Tìm");
+        }
+        let timIndex = -1;
+        for (let i = 0; i < phoneList.length; i++) {
+            if (timId == phoneList[i].id) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let newName = prompt("Nhập Tên Sản Phẩm mới");
+            let newPrice = prompt("Nhập Giá Thành Sản Phẩm mới");
+            while (isNaN(newPrice) || newPrice <= 0) {
+                newPrice = prompt("Nhập lại giá thành sản phẩm");
+            }
+            phoneList[timIndex].setName(newName);
+            phoneList[timIndex].setPrice(newPrice);
+            display();
+        } else {
+            alert("Không Tìm Thấy Id");
+        }
+    }
+
+    function deletePhone() {
+        let timId = prompt("Nhập ID Cần Xóa");
+        while (isNaN(timId) || timId <= 0) {
+            timId = prompt("Nhập Lại Id cần Xóa");
+        }
+        let timIndex = -1;
+        for (let i = 0; i < phoneList.length; i++) {
+            if (timId == phoneList[i].id) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let conf = confirm("Bạn Có Muốn Xóa Sản Phẩm Này Không?");
+            if (conf) {
+                phoneList.splice(timIndex, 1);
+                display();
+            } else {
+                alert("Không Tìm Thấy ID Muốn Xóa");
+            }
+        } else {
+            alert("Không Tìm Thấy ID cần Xóa");
+        }
+    }
+
+    function display() {
+        let tableString = `<table>
+                <tr>
+                    <th>ID</th>
+                    <th>TÊN SẢN PHẨM</th>
+                    <th>GIÁ THÀNH SẢN PHẨM</th>
+                </tr>
+            `;
+        for (let i = 0; i < phoneList.length; i++) {
+            tableString += `
+                <tr>
+                    <td>${phoneList[i].id}</td>
+                    <td>${phoneList[i].name}</td>
+                    <td>${phoneList[i].price}</td>
+                </tr>
+                `;
+        }
+        document.getElementById("result").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>

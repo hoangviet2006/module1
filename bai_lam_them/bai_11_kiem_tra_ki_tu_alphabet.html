@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = "hoangdinhviet30/03/2006"
+
+    function checkString(str) {
+        let array = [];
+        for (const char of str) {  // const char of str: char đại diện cho các phần tử ở trong mảng; of str duyệt qua mảng bằng độ dài của str
+            if ((char >= 0 && char <= 9) || (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+            } else {
+                array.push(char);
+            }
+        }
+        /*for (const char in str) { const char in str: char đại diện cho vị trí index của từng phần tử trong mảng ;in str duyệt qua mảng bằng độ dài str
+            if ((char >= 0 && char <= 9) || (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+            } else {
+                array.push(char);
+            }
+        }*/
+        return array;
+    }
+
+    alert(checkString(string));
+</script>
+</body>
+</html>

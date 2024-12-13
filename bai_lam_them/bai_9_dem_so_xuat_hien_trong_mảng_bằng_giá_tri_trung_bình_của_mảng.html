@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập độ dài mảng");
+    while (isNaN(number) && number <= 0) {
+        number = +prompt("Nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let nhapPhanTu = +prompt("Nhập phần tử thứ: " + i);
+        arr.push(nhapPhanTu);
+    }
+    let sum = 0
+    for (let i = 0;i<arr.length;i++){
+        sum +=arr[i];
+    }
+    let trungBinh = sum/arr.length;
+    let count = 0
+    for (let i =0; i<arr.length;i++){
+        if (arr[i]===trungBinh){
+            count++
+        }
+    }
+    alert("số lượng bằng với trung bình của mảng là: "+ count)
+
+</script>
+</body>
+</html>

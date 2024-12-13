@@ -2,48 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Máy tính</title>
+    <style>
+        /* Tạo khung cho máy tính */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+        }
+
+        /* Tạo khung input */
+        #input {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Các nút bấm */
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #dcdcdc;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            background-color: #bbb;
+            transform: scale(1.05);
+        }
+
+        /* Các nút đặc biệt như AC, = */
+        .special-button {
+            background-color: #ff9e00;
+            color: white;
+        }
+
+        .special-button:hover {
+            background-color: #e68900;
+        }
+
+        .special-button:active {
+            background-color: #d57300;
+        }
+
+        /* Đặt lại layout cho các nút bấm */
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
-<tr>
-    <td><input id="input" type="text"></td>
-</tr>
-<br>
-<tr>
-    <th id="1">
+<div class="calculator">
+    <input id="input" type="text" disabled>
+
+    <div class="button-row">
         <button onclick="addNumber(1)">1</button>
         <button onclick="addNumber(2)">2</button>
         <button onclick="addNumber(3)">3</button>
-        <button onclick="addOperator('+')">+</button>
-    </th>
-    <br>
-</tr>
-<tr>
-    <th>
+        <button onclick="addOperator('+')" class="special-button">+</button>
+    </div>
+
+    <div class="button-row">
         <button onclick="addNumber(4)">4</button>
         <button onclick="addNumber(5)">5</button>
         <button onclick="addNumber(6)">6</button>
-        <button onclick="addOperator('-')">-</button>
-    </th>
-</tr>
-<br>
-<tr>
-    <th>
+        <button onclick="addOperator('-')" class="special-button">-</button>
+    </div>
+
+    <div class="button-row">
         <button onclick="addNumber(7)">7</button>
         <button onclick="addNumber(8)">8</button>
         <button onclick="addNumber(9)">9</button>
-        <button onclick="addOperator('*')">*</button>
-    </th>
-</tr>
-<br>
-<tr>
-    <th>
-        <button onclick="deleteNumber() ">AC</button>
+        <button onclick="addOperator('*')" class="special-button">*</button>
+    </div>
+
+    <div class="button-row">
+        <button onclick="deleteNumber()" class="special-button">AC</button>
         <button onclick="addNumber(0)">0</button>
-        <button onclick="getResult('=')">=</button>
-        <button onclick="addOperator('/')">/</button>
-    </th>
-</tr>
+        <button onclick="getResult('=')" class="special-button">=</button>
+        <button onclick="addOperator('/')" class="special-button">/</button>
+    </div>
+</div>
+
 <script>
     let operator;
     let number1;
@@ -61,7 +131,7 @@
 
     function getResult() {
         number2 = parseInt(document.getElementById("input").value);
-        let result
+        let result;
         if (operator === '+') {
             result = number1 + number2;
         } else if (operator === '-') {
@@ -73,7 +143,8 @@
         }
         document.getElementById("input").value = result;
     }
-    function deleteNumber(){
+
+    function deleteNumber() {
         document.getElementById("input").value = "";
     }
 </script>

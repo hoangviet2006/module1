@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (number <= 0 || isNaN(number)) {
+        number = prompt("Nhập lại độ  dài mảng");
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let nhapSo = prompt("Nhập phần tử thứ: " + i)
+        while (isNaN(nhapSo) || nhapSo === "") {
+            nhapSo = prompt("nhập lại")
+        }
+        arr.push(Number(nhapSo));
+    }
+    alert(arr)
+
+    function kiemTra() {
+        let max = arr[0]
+        let count = 0
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === max) {
+                count++
+            }
+        }
+        return "Số lớn nhất trong mảng là : " + max + " số lần xuất hiện : " + count;
+    }
+    let s = kiemTra();
+
+    alert(s)
+</script>
+</body>
+</html>

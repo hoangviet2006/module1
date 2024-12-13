@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let number = prompt("Nhập vào một mảng gồm 10 phần tử");
+  while (isNaN(number)||number!=10){
+      number = prompt("Nhập lại");
+  }
+  let arr = []
+  for (let i =0 ;i<number;i++){
+      let nhapSo = prompt("Nhập phần tử thứ: " +i);
+      while (isNaN(nhapSo)){
+          nhapSo = prompt("Nhập lại")
+      }
+      arr.push(nhapSo);
+  }
+  let doanSo =prompt("Nhập số muốn kiểm tra")
+  for (let i =0;i<arr.length;i++){
+      if (doanSo==arr[i]){
+          alert("V is in the array")
+          break
+      }else {
+          alert("V is not in the array")
+          break
+      }
+  }
+</script>
+</body>
+</html>

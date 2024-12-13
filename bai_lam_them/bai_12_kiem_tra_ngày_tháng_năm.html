@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function checkDate(dateString) {
+        let array = dateString.split("/");
+        if (array.length === 3) {
+            if (array[0] > 0 && array[0] <= 31 && (array[1] > 0 && array[1] <= 12) && (array[2] >0 && array[2]<9999)) {
+                alert("Ok")
+            } else {
+                alert("No")
+            }
+        }else {
+            alert("No")
+        }
+    }
+    checkDate("30/03/2006")
+    checkDate("30/13/2006")
+    checkDate("32/13/2006")
+    checkDate("32/13/20060")
+</script>
+</body>
+</html>

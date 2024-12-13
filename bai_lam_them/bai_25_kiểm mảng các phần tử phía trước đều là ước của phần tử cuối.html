@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number) || number <= 0) {
+        number = prompt("Nhập lại")
+    }
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let nhapPhanTu = prompt("Nhập phần tử thứ: " + i);
+        arr.push(nhapPhanTu);
+    }
+    let check = true
+    for (let i = 0; i < arr.length-1; i++) {
+        if (arr[i + 1] % arr[i] !== 0) {
+            check = false;
+            break;
+        }
+    }
+    if (check) {
+        document.write(arr+"  OK")
+    } else {
+        document.write(arr+"  No")
+    }
+</script>
+</body>
+</html>

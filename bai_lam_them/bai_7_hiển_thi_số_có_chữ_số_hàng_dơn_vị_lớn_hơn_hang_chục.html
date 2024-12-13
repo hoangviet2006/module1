@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (number < 0 && isNaN(number)) {
+        number = prompt("Nhập lại độ dài mảng")
+    }
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let nhapSo = prompt("Nhập  phần tử thứ: " + i);
+        while (nhapSo < 10 || nhapSo > 100 || isNaN(nhapSo)) {
+            nhapSo = prompt("Nhập lại số phải lớn hơn 10 và nhỏ hơn 100")
+        }
+        arr.push(parseInt(nhapSo));
+    }
+    kiemTra();
+
+    function kiemTra() {
+        let soThoaMan = [];
+        for (let j = 0; j < arr.length; j++) {
+            let hangDonVi = arr[j] % 10;
+            let hangChuc = Math.floor(arr[j] / 10);
+            if (hangChuc < hangDonVi) {
+                soThoaMan.push(arr[j])
+            }
+        }
+        if (soThoaMan.length > 0) {
+            alert(soThoaMan)
+        } else {
+            alert("không có số nào thỏa mãn yêu cầu bài toán")
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt("Nhap vao do dai mang");
+  while (a<0&& isNaN(a)){
+    a = prompt("nhap lai");
+  }
+  let arr = []
+  for (let i = 1; i<=a; i++){
+    let nhapSo = prompt("Nhap phan tu thu: " +i);
+    arr.push(nhapSo);
+  }
+  display()
+  function display() {
+    let count1 = 0;
+    let count2 = 0;
+     for (let i = 0; i<arr.length; i++){
+       if( arr[i]%2===0) {
+         count1++
+       }else {
+         count2++
+       }
+     }
+     if (count1===count2){
+       alert("Ok")
+     }else {
+       alert("Not Ok")
+     }
+  }
+</script>
+</body>
+</html>

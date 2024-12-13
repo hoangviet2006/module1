@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào  mảng  A có độ dài bằng 10:");
+    while (isNaN(number) || number != 10 || number === "") {
+        number = prompt("Nhập lại độ dài mảng phải bằng 10")
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let nhapSo = prompt("Nhập phần tử thứ: " + i);
+        while (isNaN(nhapSo) || nhapSo === "") {
+            nhapSo = prompt("Nhập lại Phần tử thứ: " + i)
+        }
+        arr.push(nhapSo);
+    }
+
+    let number1 = prompt("Nhập vào  mảng B có độ dài bằng 10:");
+    while (isNaN(number1) || number1 != 10 || number1 === "") {
+        number1 = prompt("Nhập lại độ dài mảng phải bằng 10")
+    }
+    let arr1 = [];
+    for (let i = 1; i <= number1; i++) {
+        let nhapSo = prompt("Nhập phần tử thứ: " + i);
+        while (isNaN(nhapSo) || nhapSo === "") {
+            nhapSo = prompt("Nhập lại Phần tử thứ: " + i)
+        }
+        arr1.push(nhapSo);
+    }
+    let arr2 = arr.concat(arr1);
+    alert("Mảng C được nối từ hai mảng khơi tạo lúc đầu là : " + arr2)
+</script>
+</body>
+</html>
