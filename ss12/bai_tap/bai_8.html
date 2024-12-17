@@ -6,18 +6,18 @@
 </head>
 <body>
 <script>
-  let number = prompt("Nhập vào một mảng có độ dài bằng 10:");
-  while (isNaN(number)||number!=10){
-    number = prompt("Nhập lại độ dài mảng phải bằng 10")
-  }
-  let arr = [];
-  for (let i = 1;i<=number;i++){
-    let nhapSo = prompt("Nhập phần tử thứ: "+i);
-    arr.push(nhapSo);
-  }
-  alert(arr);
-  let sapXep = arr.sort((a,b)=>b-a)
-  alert("Mảng sắp xếp lại theo thứ tự giảm dần: "+sapXep);
+    let number = prompt("Nhập vào một mảng có độ dài bằng 10:");
+    while (isNaN(number) || number != 10) {
+        number = prompt("Nhập lại độ dài mảng phải bằng 10")
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let nhapSo = prompt("Nhập phần tử thứ: " + i);
+        arr.push(nhapSo);
+    }
+    alert(arr);
+    let sapXep = arr.sort((a, b) => b - a)
+    alert("Mảng sắp xếp lại theo thứ tự giảm dần: " + sapXep);
 </script>
 </body>
 </html>

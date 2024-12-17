@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+        function kiemTra(){
+            let number = prompt("Nhập vào độ dài mảng");
+            while (isNaN(number) || number === "" || number <= 0) {
+                number = prompt("Nhập lại độ dài mảng");
+            }
+            let arr = [];
+            for (let i = 1; i <= number; i++) {
+                let nhapPhanTu = prompt("Nhập vào phần tử thứ: " + i);
+                arr.push(nhapPhanTu);
+            }
+            alert(arr);
+            let number1 = prompt("Nhập vào một kí tự kiểm tra");
+            let count = 0;
+            let check = false
+            for (let i = 0; i < arr.length; i++) {
+                if (number1 == arr[i]) {
+                    check = true;
+                    count++;
+                }
+            }
+            if (check) {
+                alert(count);
+            } else {
+                alert("-1")
+            }
+        }
+        kiemTra()
+
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="kiemTra()">kiểm tra</button>
+<script>
+    function kiemTra() {
+        let arr=[]
+        let number1 = prompt("Nhập vào  số thứ nhất");
+        while (isNaN(number1)||number1===""){
+            number1=prompt("nhập lại")
+        }
+        let number2 = prompt("Nhập vào số thứ hai");
+        while (isNaN(number2)||number2===""){
+            number2=prompt("nhập lại")
+        }
+        arr.push(number1,number2);
+        alert(arr);
+        arr.reverse();
+        alert(arr)
+    }
+</script>
+</body>
+</html>

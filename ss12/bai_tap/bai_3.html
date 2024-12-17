@@ -10,16 +10,13 @@
   let max = arr[0]
   let sum = 0
   for (let i=0;i<arr.length;i++){
-      for (let i = 0;i<arr.length;i++){
         if (arr[i]>max){
           max =arr[i];
         }
         sum+=arr[i]
-      }
-      alert("Giá Trị Trung Bình Của Các Phần Tu Trong Mảng: "+ parseInt(sum/arr.length))
-      alert("Giá Trị Lớn Nhât Mảng Là: "+max)
-      break;
   }
+  alert("Giá Trị Trung Bình Của Các Phần Tu Trong Mảng: "+ (sum/arr.length))
+  alert("Giá Trị Lớn Nhât Mảng Là: "+max)
 </script>
 </body>
 </html>

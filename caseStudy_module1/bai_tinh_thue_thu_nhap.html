@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào mức lương của bạn");
+    while (isNaN(number) || number > 15000000) {
+        number = prompt("Nhập lại mức lương của bạn")
+    }
+    let thue = 0
+    for (let i = 0; i < number; i++) {
+        if (number<=15000000){
+             thue = number*(20/100);
+            alert(thue);
+            break
+        }else if (number>7000000||number<15000000){
+             thue = number*(15/100);
+            alert(thue);
+            break
+        }else if (number<7000000) {
+             thue  = number*(5/100);
+            alert(thue)
+            break
+        }
+    }
+</script>
+</body>
+</html>

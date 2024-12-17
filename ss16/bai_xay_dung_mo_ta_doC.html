@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class NhietDo{
+    doC;
+    constructor(doC) {
+      this.doC =doC
+    }
+    setdoC(doC){
+      this.doC =doC
+    }
+    getdoC(){
+      return this.doC
+    }
+    chuyenSangF(){
+      return this.doC*9/5+32;
+    }
+    chuyenSangK(){
+      return this.doC+273.5
+    }
+  }
+  let nhietDo = new NhietDo(20);
+  let doiSangF = nhietDo.chuyenSangF();
+  document.write(doiSangF+"<br>");
+  nhietDo.setdoC(30);
+  document.write(nhietDo.chuyenSangF())
+   document.write(nhietDo.getdoC())
+
+
+</script>
+</body>
+</html>

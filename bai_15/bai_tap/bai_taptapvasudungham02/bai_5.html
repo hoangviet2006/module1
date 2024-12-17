@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="kiemTra()">kiểm tra</button>
+<script>
+  function kiemTra(){
+    let number = prompt("Nhập vào một số");
+    while (number===""|| parseInt(number)!=number){
+      number = prompt("Nhập lại")
+    }
+    if (number<0){
+      alert("false")
+    }else {
+      alert("true")
+    }
+  }
+</script>
+</body>
+</html>
