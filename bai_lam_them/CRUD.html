@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Management</title>
     <style>
-        /* General page styling */
+
         body {
             font-family: 'Arial', sans-serif;
             background: #ecf0f1;
@@ -41,7 +41,7 @@
             text-transform: uppercase;
         }
 
-        /* Button styles */
+
         button {
             background-color: #3498db;
             color: white;
@@ -68,7 +68,7 @@
             outline: none;
         }
 
-        /* Table styling */
+
         table {
             width: 100%;
             margin-top: 30px;
@@ -105,15 +105,14 @@
             border-bottom: 1px solid #ddd;
         }
 
-        /* Alert and Error messages */
-        .alert {
+
+        {
             color: #e74c3c;
             font-size: 18px;
             margin-top: 20px;
             font-weight: bold;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -237,8 +236,6 @@
             if (conf) {
                 phoneList.splice(timIndex, 1);
                 display();
-            } else {
-                alert("Không Tìm Thấy ID Muốn Xóa");
             }
         } else {
             alert("Không Tìm Thấy ID cần Xóa");

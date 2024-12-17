@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="=1">
+    <tr>
+        <th>Stt</th>
+        <th>Danh Sách Đồ Uống</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>
+            <button onclick="tinhTien(15000,'Cà Phê')">Cà phê</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>
+            <button onclick="tinhTien(25000,'Cam Vắt')">Cam vắt</button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>
+            <button onclick="tinhTien(20000,'Nước Ép Cà Rốt')">Nước ép cà rốt</button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>
+            <button onclick="tinhTien(30000,'Nước Ép Cà Chua')">Nước ép cà chua</button>
+        </td>
+    </tr>
+</table>
+<script>
+    // function caPhe(){
+    //     alert("Cà phê có giá  15000 một ly")
+    //     let soLuong = prompt("Nhập vào số lượng muốn gọi");
+    //     while (isNaN(soLuong)||soLuong<=0){
+    //         soLuong = prompt("Nhập lại số lượng muốn gọi")
+    //     }
+    //     let giaTien = soLuong*15000;
+    //     alert("Tổng số tiền phải trả cho "+soLuong+ " ly là: " + giaTien+ " nghìn đồng")
+    // }
+    // function nuocCam(){
+    //     alert("Nước cam có giá 20000 một ly");
+    //     let soLuong = prompt("Nhập vào số lượng muốn gọi");
+    //     while (isNaN(soLuong)||soLuong<=0){
+    //         soLuong = prompt("Nhập lại số lượng muốn gọi")
+    //     }
+    //     let giaTien = soLuong*20000;
+    //     alert("Tổng số  tiền phải trả cho " + soLuong+ " ly là" + giaTien + "nghìn đồng");
+    // }
+    // function nuocEpCaRot(){
+    //     alert("Nước ép cà rốt có giá 25000 một ly");
+    //     let soLuong = prompt("Nhập vào số lượng muốn gọi");
+    //     while (isNaN(soLuong)||soLuong<=0){
+    //         soLuong = prompt("Nhập lại số lượng muốn gọi")
+    //     }
+    //
+    //     let giaTien = soLuong*25000;
+    //     alert("Tổng số  tiền phải trả cho " + soLuong+ " ly là" + giaTien + "nghìn đồng");
+    // }
+    // function nuocEpCaChua(){
+    //     alert("Nước ép cà chua có giá 30000 một ly");
+    //     let soLuong = prompt("Nhập vào số lượng muốn gọi");
+    //     while (isNaN(soLuong)||soLuong<=0){
+    //         soLuong = prompt("Nhập lại số lượng muốn gọi")
+    //     }
+    //     let giaTien = soLuong*30000;
+    //     alert("Tổng số  tiền phải trả cho " + soLuong+ " ly là" + giaTien + "nghìn đồng");
+    // }
+
+    function tinhTien(gia, tenDoUong) {
+        alert(tenDoUong + " có giá " + gia + " một ly");
+        let soLuong = +prompt("Nhập vào số lượng muốn gọi");
+        while (soLuong <= 0 || soLuong === "") {
+            soLuong = +prompt("Nhập lại số lượng đồ uống muốn gọi")
+        }
+        let tien = soLuong * gia;
+        alert("tổng số tiền phải trả cho " + soLuong + " ly " + tenDoUong + " là: " + tien)
+    }
+</script>
+</body>
+</html>

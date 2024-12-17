@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addStudent()">Thêm Học Viên</button>
+<button onclick="editStudent()">Chỉnh Sửa Học Viên</button>
+<button onclick="deleteStudent()">Xóa Học Viên</button>
+
+<p id="input"></p>
+<script>
+    class Student {
+        constructor(id, name, clas, email, date, module) {
+            this.id = id;
+            this.name = name;
+            this.clas = clas;
+            this.email = email;
+            this.date = date;
+            this.module = module;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setClas(clas) {
+            this.clas = clas;
+        }
+
+        getClas() {
+            return this.clas
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getEmail() {
+            return this.email
+        }
+
+        setDate(date) {
+            this.date = date;
+        }
+
+        getDate() {
+            return this.date
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+
+        getModule() {
+            return this.module;
+        }
+    }
+
+    let student = new Student(1, "Hoàng Đình Việt", "C11", "hoangViet@", 30032006, 1);
+    let student1 = new Student(2, "Hoàng  Việt", "C11", "hoangViet@", 30032006, 2);
+    let studentList = [student, student1];
+    display();
+
+    function addStudent() {
+        let newId = prompt("Nhập Id học viên");
+        while (isNaN(newId)|| newId===""){
+            newId = prompt("Nhập lại id học viên")
+        }
+        let newName = prompt("Nhập vào tên học viên");
+        while (newName===""){
+            newName = prompt("Nhập lại tên của học viên")
+        }
+        let newClas = prompt("Nhập Lớp của học viên");
+        while (newClas===""){
+            newClas = prompt("Nhập lại lớp của học viên")
+        }
+        let newEmail = prompt("Nhập vào email của học viên");
+        while (newEmail===""){
+            newEmail = prompt("Nhập lại email học viên")
+        }
+        let newDate = prompt("Nhập vào ngày sinh của học viên");
+        while (isNaN(newDate) || newDate===""){
+            newDate = prompt("Nhập lại ngày sinh của học viên")
+        }
+        let newModule = prompt("Nhập vào module học viên");
+        while (isNaN(newModule)|| newModule===""){
+            newModule = prompt("nhập lại module học viên")
+        }
+        let student = new Student(newId, newName, newClas, newEmail, newDate, newModule);
+        studentList.push(student);
+        display();
+    }
+
+
+    function editStudent() {
+        let timId = prompt("Nhập Id học viên cần chỉnh sửa");
+        while (isNaN(timId)||timId===""){
+            timId = prompt("Nhập lại id cần sửa")
+        }
+        let timIndex = -1;
+        for (let i = 0; i < studentList.length; i++) {
+            if (studentList[i].id == timId) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let newName = prompt("Nhập Tên của học viên");
+            while (newName===""){
+                newName = prompt("Nhập lại tên của học viên")
+            }
+            let newClas = prompt("Nhập lớp của học viên");
+            while (newName===""){
+                newName = prompt("Nhập lại tên của học viên")
+            }
+            let newEmail = prompt("Nhập Email của học viên");
+            while (newEmail===""){}
+            newEmail = prompt("Nhập lại email học viên")
+            let newDate = prompt("nhập ngày sinh của học viên");
+            while (isNaN(newDate) || newDate===""){
+                newDate = prompt("Nhập lại id học viên")
+            }
+            let newModule = prompt("Nhập module của học viên");
+            while (isNaN(newModule)|| newModule===""){
+                newModule = prompt("nhập lại module học viên")
+            }
+            studentList[timIndex].setName(newName);
+            studentList[timIndex].setClas(newClas);
+            studentList[timIndex].setEmail(newEmail);
+            studentList[timIndex].setDate(newDate);
+            studentList[timIndex].setModule(newModule);
+            display();
+        }
+    }
+
+
+
+    function deleteStudent() {
+        let timId = prompt("Nhập Id học viên cần xóa");
+        while (timId===""|| isNaN(timId)){
+            timId =prompt("Nhập lại id  cần xóa")
+        }
+        let timIndex = -1;
+        for (let i = 0; i < studentList.length; i++) {
+            if (timId == studentList[i].id) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let conf = confirm("Bạn có muốn xóa học viên này?");
+            if (conf) {
+                studentList.splice(timIndex, 1);
+                display();
+            }
+        } else {
+            alert("Không tìm thấy id học viên muốn xóa")
+        }
+    }
+
+
+    function display() {
+        let tableString = `<table border="1">
+  <tr>
+        <th>MÃ Học Viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày Sinh</th>
+        <th>Module</th>
+    </tr>
+`
+        for (let i = 0; i < studentList.length; i++) {
+            tableString += `
+            <tr>
+        <td>${studentList[i].id}</td>
+        <td>${studentList[i].name}</td>
+        <td>${studentList[i].clas}</td>
+        <td>${studentList[i].email}</td>
+        <td>${studentList[i].date}</td>
+        <td>${studentList[i].module}</td>
+    </tr>
+
+            `
+        }
+        document.getElementById("input").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>

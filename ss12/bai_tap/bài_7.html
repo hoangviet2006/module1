@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập vào độ dài mảng có 10 phần tử ");
+    while (number !== 10 || isNaN(number)) {
+        number = +prompt("Nhập lại độ dài mảng phải có độ dài bằng 10");
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let nhapSo = +prompt("Nhập vào phần tử thứ : " + i);
+        while (isNaN(nhapSo)||nhapSo=="") {
+            nhapSo = +prompt("Nhập lại phần tư thứ: " + i);
+        }
+        arr.push(nhapSo);
+    }
+    alert(arr)
+    let doanSo = +prompt("Nhập vào một số: ");
+    while (isNaN(doanSo)) {
+        doanSo = +prompt("Nhập lại một số:")
+    }
+    doanSo = Number(doanSo);
+    let check = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (doanSo === arr[i]) {
+            check = true;
+            arr.splice(i, 1);
+            break;
+        }
+    }
+    if (check) {
+        alert("Mảng sau khi xóa:  " + arr);
+    } else {
+        alert(" Số vừa nhập không có trong mảng")
+    }
+
+</script>
+</body>
+</html>

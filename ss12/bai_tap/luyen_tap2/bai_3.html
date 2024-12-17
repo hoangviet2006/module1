@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng:");
+    while (number==""){
+        number=prompt("Nhập lại độ dài mảng")
+    }
+    let arr = [];
+    let count = 0
+    for (let i = 1; i <= number; i++) {
+        let nhapSo = prompt("Nhập vào phần tử thứ: " + i)
+        while (nhapSo==""){
+            nhapSo = prompt("Nhập lại phần tử thứ: "+i)
+        }
+        arr.push(nhapSo);
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (isNaN(arr[i])) {
+        } else {
+            count++
+        }
+    }
+    alert("kí tự số có trong mảng là: "+count)
+</script>
+</body>
+</html>

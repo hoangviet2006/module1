@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào số thập phân thứ nhất");
+    let number1 = prompt("Nhập vào số thập phân thứ hai");
+
+    function kiemTra(x,y) {
+        let arr = x.split("/");
+        let arr1 = y.split("/");
+        if (arr < arr1) {
+            console.log(arr1 + " Lớn hơn " + arr);
+        } else if (arr > arr1) {
+            console.log(arr + " Lớn hơn " + arr1);
+        } else {
+            console.log("Hai số bằng nhau");
+        }
+    }
+    kiemTra(number,number1);
+</script>
+<script>
+    let phanSo = prompt("Nhập phân số:")
+    find(phanSo);
+
+    function find(x) {
+        let arr = x.split("/")
+        if (arr.length==2&&arr[0] % 1 == 0 && arr[1] % 1 == 0) {
+            if (arr[0]>arr[1]){
+                for (let i=1;i<=arr[0];i++){
+                    UCLN = i;
+                }
+            }else {
+                for (let i=1;i<=arr[1];i++){
+                    UCLN = i;
+                }
+            }
+            alert(UCLN)
+
+
+            document.write("đây là phân số" + arr[0]/UCLN+"/"+arr[1]/UCLN)
+        } else {
+            document.write("đây không phải là phân số")
+        }
+    }
+</script>
+</body>
+</html>

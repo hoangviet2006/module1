@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    commonCharacterCount("aabdc","aabbcc")
+    function commonCharacterCount (str1, str2){
+        let array1 = str1.split('');
+        let array2 = str2.split('');
+        let arr = [];
+        for (let i = 0;i<array1.length;i++){
+            let index = array2.indexOf(array1[i]);
+            if (index!==-1){
+                arr.push(array1[i]);
+                array2.splice(index,1);
+            }
+        }
+        alert(arr);
+    }
+
+
+
+
+
+    function commonCharacterCount1(str_1, str_2) {
+        const wordRepeat1 = countWord(str_1);
+        const wordRepeat2 = countWord(str_2);
+        const wordRepeatResult = {};
+        for (let e in wordRepeat1) {
+            if (wordRepeat2[e] != null) {
+                wordRepeatResult[e] = wordRepeat1[e] < wordRepeat2[e] ? wordRepeat1[e] : wordRepeat2[e];
+            }
+        }
+        return wordRepeatResult;
+    }
+
+    function countWord(str) {
+        const wordRepeat = {};
+        for (let e of str) {
+            if (wordRepeat[e] == null) {
+                wordRepeat[e] = 1;
+            } else {
+                wordRepeat[e] = ++wordRepeat[e];
+            }
+        }
+        return wordRepeat;
+    }
+
+    function display() {
+        const object = commonCharacterCount1("aacccddkkkk", "aajjjjddgggkkk");
+        let count = 0;
+        let result;
+        for (let e in object) {
+            count = count + object[e];
+        }
+        result = "Số kí tự trùng nhau là " + count + " kí tự: ";
+        for (let e in object) {
+            result += object[e] + " kí tự " + e + ", ";
+        }
+        return result;
+    }
+
+    console.log(display())
+
+
+</script>
+</body>
+</html>

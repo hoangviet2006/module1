@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isoscelesTriangle(h) {
+        for (let i = 0; i < h; i++) {
+            for (let j = 0; j < h; j++) {
+                if (j >= h - i)  {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp;");
+                }
+            }
+            document.write("<br/>");
+        }
+    }
+
+    isoscelesTriangle(5)
+</script>
+</body>
+</html>

@@ -6,9 +6,8 @@
 </head>
 <body>
 <script>
-
     let number = prompt("nhập vào độ dài mảng");
-    while (isNaN(number)|| number<=2){
+    while (isNaN(number)|| number<2){
         number = prompt("nhập lại");
     }
     let arr= []
@@ -16,14 +15,13 @@
         let demPhantu = prompt("Nhập phần tử thứ: " +i);
         arr.push(demPhantu)
     }
-
      function checkString(str){
         let count =0;
         let count1 = 0
          for (let i = 0; i<str.length;i++){
-             if (str[i]===str[i].toUpperCase() && str[i]!==str[i].toLowerCase()){
+             if (str[i]===str[i].toUpperCase() ){
                  count++
-             }else if (str[i]===str[i].toLowerCase()&& str[i]!==str[i].toUpperCase()){
+             }else if (str[i]===str[i].toLowerCase()){
                  count1++
              }
          }
@@ -33,7 +31,7 @@
             alert("False");
         }
      }
-    checkString(arr[0])
+    checkString(arr)
 </script>
 </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // class BongDen {
+    //     status = false;
+    //     getStatus() {
+    //         return this.status;
+    //     }
+    //     setStatus() {
+    //         this.status = !this.status;
+    //     }
+    // }
+    //
+    // class CongTac {
+    //     status = false;
+    //     bongDen;
+    //
+    //     getStatus() {
+    //         return this.status;
+    //     }
+    //     setStatus() {
+    //         this.status = !this.status;
+    //         this.bongDen.setStatus();
+    //     }
+    //     setBongDen(value) {
+    //         this.bongDen = value;
+    //     }
+    // }
+    //
+    // let bongDen = new BongDen();
+    // let congTat = new CongTac();
+    // congTat.setBongDen(bongDen);
+    // console.log(congTat.getStatus());
+    // console.log(bongDen.getStatus());
+    // congTat.setStatus();
+    // console.log(congTat.getStatus());
+    // console.log(bongDen.getStatus());
+    // congTat.setStatus();
+    // console.log(congTat.getStatus());
+    // console.log(bongDen.getStatus());
+
+
+    class BongDen {
+        constructor() {
+            this.TrangThaiBongDen = false // bóng đèn đang tắt
+        }
+
+        turnOn() {
+            if (!this.TrangThaiBongDen) { // nếu bóng đèn đang tắt{ false}
+                this.TrangThaiBongDen = true // bật bóng đèn lên{ true}
+            }
+        }
+
+        turnOf() {
+            if (this.TrangThaiBongDen) {// nếu bóng đèn đang bật{true}
+                this.TrangThaiBongDen = false // tắt bóng đèn đi { false}
+            }
+        }
+    }
+
+    class CongTac {
+        constructor() {
+            this.CongTacStatus = false; // công tắt đang tắt
+            this.BongDen = null;// giá trị mặc định
+        }
+        ketNoi(BongDen) {
+            this.BongDen = BongDen;
+        }
+        congTacOf(){
+            if (this.CongTacStatus){ // công tắt đang bật{ true}
+                this.CongTacStatus = false; // tắt công tắt {false}
+            }
+            if (this.BongDen!=null){
+                this.BongDen.turnOf();
+            }else {
+                console.log("Bóng đèn chưa được kết nối với công tắc");
+            }
+        }
+        congTacOn(){
+            if (!this.CongTacStatus){
+                this.CongTacStatus = true
+            }
+            if (this.BongDen!=null){
+                this.BongDen.turnOn();
+            }else {
+                console.log("Bóng đèn chưa được kết nối với công tắc");
+            }
+        }
+    }
+    let bongDen = new BongDen();
+    let congTac = new CongTac();
+    congTac.ketNoi(bongDen);
+    congTac.congTacOn();
+    console.log(bongDen.TrangThaiBongDen);
+    congTac.congTacOf();
+    console.log(bongDen.TrangThaiBongDen);
+</script>
+</body>
+</html>

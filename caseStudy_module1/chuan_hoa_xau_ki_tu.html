@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function normalizeString(str) {
+        // Loại bỏ các dấu cách thừa ở đầu và cuối xâu
+        // let str = "       chanh           van chan        "
+        str = str.trim();//  trong trường hợp này không cần thiết
+        // Chia xâu thành các từ, sử dụng dấu cách làm dấu phân cách
+        let words = str.split(" ");
+        let array = [];
+        // [gg,,,hh,tt
+        for (let i = 0; i < words.length; i++) {
+            if (words[i] !== "") {
+                array.push(words[i]);
+            }
+        }
+
+        let ketQua = "";
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (j === 0) {
+                    ketQua += array[i][j].toUpperCase();
+                } else {
+                    ketQua += array[i][j].toLowerCase();
+                }
+            }
+            ketQua+=" ";
+        }
+        alert(ketQua);
+    }
+    normalizeString("     aaaaa sccc    xdxxxs       ");
+</script>
+</body>
+</html>

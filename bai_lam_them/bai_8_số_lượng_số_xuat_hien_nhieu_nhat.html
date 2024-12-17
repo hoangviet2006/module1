@@ -12,11 +12,11 @@
     }
     let arr = [];
     for (let i = 1; i <= number; i++) {
-        let nhapSo = prompt("Nhập phần tử thứ: " + i)
-        while (isNaN(nhapSo) || nhapSo === "") {
-            nhapSo = prompt("nhập lại")
+        let addPhanTu = prompt("Nhập phần tử thứ: " + i)
+        while (isNaN(addPhanTu) || addPhanTu === "") {
+            addPhanTu = prompt("nhập lại")
         }
-        arr.push(Number(nhapSo));
+        arr.push(Number(addPhanTu));
     }
     alert(arr)
 
@@ -35,9 +35,7 @@
         }
         return "Số lớn nhất trong mảng là : " + max + " số lần xuất hiện : " + count;
     }
-    let s = kiemTra();
-
-    alert(s)
+    alert(kiemTra())
 </script>
 </body>
 </html>

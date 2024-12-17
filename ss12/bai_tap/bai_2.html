@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-  let array = [1,2,3,4,5,6,7,8,9,10];
-  let max = array[0];
-  for (let i=0;i<array.length;i++){
-    for (let i =0;i<array.length;i++){
-      if (array[i]>max){
-        max =array[i]
-      }
+    let array = [1, 2, 3, 4, 56, 6, 7, 8, 9, 55];
+    let max = array[0];
+    let viTri = 0
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+            viTri = i
+        }
     }
-    console.log(max)
-  }
+    console.log(max + " ở vị trí thứ: " + viTri);
 </script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = 50;
+    for (let i = 2; i <= number; i++) {
+        let check = true
+        if (i === 2) {
+            check = true
+        } else {
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check) {
+            console.log(i + " Là số nguyên tố")
+        }else {
+            console.log(i)
+        }
+    }
+
+</script>
+</body>
+</html>

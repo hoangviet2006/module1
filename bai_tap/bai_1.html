@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number)|| number===""||number%2!==0){
+        number = prompt("Nhập lại độ dài mảng độ dài của mảng phải là số chẳn");
+    }
+    let arr = [];
+    for (let i = 0;i<number;i++){
+        let nhapPhanTu = prompt("Nhập vào phần tử thứ: "+i);
+        while (nhapPhanTu===""|| isNaN(nhapPhanTu)){
+            nhapPhanTu = prompt("Nhập lại phần tử  thứ: "+i);
+        }
+        arr.push(nhapPhanTu);
+    }
+    let count =0;
+    let count1 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]%2===0){
+            count++;
+        }else {
+            count1++
+        }
+    }
+    if (count===count1){
+        alert("Phần tử chẳn bằng phần tử lẻ");
+    }else {
+        alert("Phần tử chẵn và phần tử lẻ không bằng nhau");
+    }
+</script>
+</body>
+</html>
