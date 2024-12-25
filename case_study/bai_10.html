@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập vào mot chuoi");
+    checkString(string)
+
+    function checkString(str) {
+        let arr = str.split("")
+        let nguyenAm = ["u", "e", "o", "a", "i"]
+        for (let i = 0; i < arr.length; i++) {
+            if (nguyenAm.includes(arr[i])) {
+                console.log(arr[i])
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
