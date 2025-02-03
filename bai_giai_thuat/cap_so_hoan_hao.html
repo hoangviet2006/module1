@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Uoc(num) {
+        let sum = 0;
+        for (let i = 1; i <num; i++) {
+            if (num % i === 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    function soHoanHao(num1, num2) {
+        let sum1 = Uoc(num1);
+        let sum2 = Uoc(num2);
+        return sum1 === num2 && sum2 === num1;
+    }
+    let result = soHoanHao(220, 284);
+    console.log(result);
+
+</script>
+</body>
+</html>

@@ -4,97 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hệ thống quản lý bài tập</title>
-  <style>
-    /* style.css */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
 
-    header {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background-color: #f1f1f1;
-      border-bottom: 1px solid #ccc;
-    }
-
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 20px;
-    }
-
-    header h1 {
-      font-size: 16px;
-      margin: 0;
-    }
-
-    .container {
-      display: flex;
-      height: calc(100vh - 50px);
-    }
-
-    aside {
-      width: 150px;
-      background-color: #eaeaea;
-      padding: 10px;
-      border-right: 1px solid #ccc;
-    }
-
-    aside button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    aside button:hover {
-      background-color: #ddd;
-    }
-
-    main {
-      flex: 1;
-      padding: 20px;
-      background-color: #fff;
-    }
-
-  </style>
 
 </head>
 <body>
-<header>
-  <div class="logo">G</div>
-  <h1>Hệ thống quản lý bài tập Casestudy module 1</h1>
-</header>
-<div class="container">
-  <aside>
-    <button>Bài tập 1</button>
-    <button>Bài tập 2</button>
-    <button>Bài tập 3</button>
-    <button>Bài tập 4</button>
-    <button>Bài tập 5</button>
-  </aside>
-  <main>
-    <!-- Nội dung bài tập sẽ hiển thị ở đây -->
-  </main>
-</div>
-<script>
-  // script.js
-  const buttons = document.querySelectorAll('aside button');
-  const mainContent = document.querySelector('main');
 
-  buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      mainContent.innerHTML = `<h2>Bài tập ${index + 1}</h2><p>Chi tiết bài tập ${index + 1} sẽ hiển thị ở đây.</p>`;
-    });
-  });
-
-</script>
 </body>
 </html>

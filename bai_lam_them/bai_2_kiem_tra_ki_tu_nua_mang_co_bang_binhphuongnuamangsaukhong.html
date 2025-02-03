@@ -6,26 +6,32 @@
 </head>
 <body>
 <script>
-  let number = prompt("Nhập vào độ dài mảng");
-  while (number<=0||isNaN(number)){
-    number = prompt("Nhập lại độ dài mảng")
-  }
-  let arr = [];
-  for (let i = 0; i <number ; i++) {
-    let nhapSo = prompt("Nhập phần tử thứ: "+i);
-    arr.push(nhapSo);
-  }
-  function checkArray(arr) {
-    if (arr.length%2!==0){
-      return false;
+    function checkArray(arr) {
+        let length = arr.length;
+        if (length % 2 !== 0) {
+            return false;
+        } else {
+            let arr1 = arr.splice(0, length / 2);
+            let arr2 = arr;
+            for (let i = 0; i < (length / 2); i++) {
+                if (arr1[i] !== (arr2[i] * arr2[i])) {
+                    return false;
+                }
+                return true
+            }
+        }
     }
-    for (let j = 0; j <arr/2 ; j++) {
-      if (arr[j]*arr[j]!==arr[arr.length/2]){
-        return false;
-      }
-    }return true;
-  }
-  alert(checkArray(arr));
+
+   alert(checkArray([1, 2,  1, 4]));
+
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+

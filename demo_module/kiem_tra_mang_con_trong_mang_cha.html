@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  viet mot hàm truyen vào 2 tham so là 2 mảng checkArray ( childArray, parentArray)
+    // kiem tra mang childArray  có phaải là mảng con của parentArray hay không? có thì trả ve true , ngjuoc lại trả false
+    // mảng childArray laf mang con khi tất ca các pt của mảng ChildArray phải nằm trong mảng cha parentArray
+    // ví dụ child =[3,5,6] là mảng con của mảng parent =
+    function checkArray(array1, array2) {
+        let arr = [];
+        for (let i = 0; i < array1.length; i++) {
+            if (array2.includes(array1[i])) {
+                arr.push(array1[i]);
+            }
+
+        }
+        if (arr.length === array1.length) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+
+    let array1 = [1, 5, 6, 3];
+    let array2 = [4, 5, 7, 1, 8, 2, 1, 3,5, 6, 9];
+
+    alert(checkArray(array1, array2));
+
+
+</script>
+</body>
+</html>

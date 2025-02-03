@@ -1,34 +1,38 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-    <script>
-      let a = prompt("nhập độ dài của mảng");
-      while (isNaN(a) || a<=0 || a<=2){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhập độ dài của mảng");
+    while (isNaN(a) || a === "") {
         a = prompt("nhập lại")
-      }
-      let arr = [];
-      for (let i =1 ; i<=a ; i++){
-        let nhapSo= prompt("nhập phần tử thứ: "+i)
-          arr.push(nhapSo)
-      }
-     let  check =false;
-      for (let j = 0; j<arr.length -1 ;j++){
-          if (arr[j]<arr[j+1]) {
-            check=true;
-          }else {
-              check = false;
-              break;
-          }
-      }
-      if (check){
-          alert("OK")
-      }else {
-          alert("No")
-      }
-    </script>
-    </body>
-    </html>
+    }
+    let arr = [];
+    for (let i = 1; i <= a; i++) {
+        let nhapSo = prompt("nhập phần tử thứ: " + i)
+        arr.push(nhapSo)
+    }
+    let checkTang = true;
+    let checkGiam = true;
+    for (let j = 0; j < arr.length - 1; j++) {
+        if (arr[j] < arr[j + 1]) {
+            checkGiam = false;
+        }
+        if (arr[j] > arr[j + 1]) {
+            checkTang = false;
+        }
+    }
+    if (checkTang) {
+        alert("Mảng tăng dần");
+    } else if (checkGiam) {
+        alert("Mảng giảm dần");
+    }else {
+        alert("mảng không tăng khong giảm");
+    }
+
+</script>
+</body>
+</html>

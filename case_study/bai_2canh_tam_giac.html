@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkTriangle(x, y, z) {
+        if (x + y <= z || x + z <= y || y + z <= x && x <= 0 || y <= 0 && z <= 0) {
+            alert("đây không phải một canh cua tam giac");
+        } else {
+            if (x * x === (y * y) + (z * z) || y * y === (x * x) + (z * z) || z * z === (x * x) + (y * y)) {
+                alert("đây là cạnh của một tam giác vuông");
+            } else {
+                alert("đây chỉ la cạnh của một tam giác bình thuong");
+            }
+        }
+    }
+    checkTriangle(3, 4, 5);
+    checkTriangle(4,12,10);
+</script>
+</body>
+</html>

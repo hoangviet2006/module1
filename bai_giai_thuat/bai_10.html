@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let arr = str.split(' ')
+        let count;
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        }
+        count = arr.length
+        document.write("So tu co trong mang la: " + count + "<br>");
+        let array = [];
+        for (let i = 0; i < arr.length; i++) {
+            let count1 = 0
+            if (!array.includes(arr[i])) {
+                array.push(arr[i]);
+                for (let j = 0; j < arr.length; j++) {
+                    if (arr[j] === array[i]) {
+                        count1++;
+                    }
+                }
+                document.write(arr[i] + " xuất hiện " + count1 + " lần.<br>");
+            }
+        }
+    }
+    checkString('Hoang Viet Hoang Viet Hoang');
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập độ dài mảng: ")
+
+    while (n <= 0 || n > 20 || parseInt(n) !== n) {
+        n = prompt("nhập lại độ dài mảng ")
+    }
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+        let enterNumber = prompt("phan tử thứ " + i)
+        arr.push(enterNumber)
+    }
+    let check = true
+    hieu = arr[1] - arr[0]
+    if (arr.length < 2) {
+        check = true;
+    }
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i + 1] - arr[i] !== hieu) {
+            check = false;
+            break;
+        }
+    }
+    if (check) {
+        document.write("Ok")
+    } else {
+        document.write("NO")
+    }
+</script>
+</body>
+</html>

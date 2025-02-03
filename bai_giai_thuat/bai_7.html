@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkNumber(num){
+    let S = 0;
+    let P = 1;
+    let str = num.toString()
+    for (let i = 0; i < str.length; i++) {
+        S += Number(str[i]);
+        P *= Number(str[i]);
+    }
+      console.log(S);
+      console.log(P);
+  }
+  checkNumber(123)
+</script>
+</body>
+</html>

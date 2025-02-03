@@ -7,13 +7,8 @@
 <body>
 <script>
     function normalizeString(str) {
-        // Loại bỏ các dấu cách thừa ở đầu và cuối xâu
-        // let str = "       chanh           van chan        "
-        str = str.trim();//  trong trường hợp này không cần thiết
-        // Chia xâu thành các từ, sử dụng dấu cách làm dấu phân cách
         let words = str.split(" ");
         let array = [];
-        // [gg,,,hh,tt
         for (let i = 0; i < words.length; i++) {
             if (words[i] !== "") {
                 array.push(words[i]);

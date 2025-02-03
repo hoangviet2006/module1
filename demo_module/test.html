@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<p id="input"></p>
+</body>
+<table>
+
+
+</table>
+<script>
+    class Student{
+        constructor(id,name,age,date) {
+            this.id =id
+            this.name = name
+            this.age = age
+            this.date =date
+        }
+        setId(id){
+            this.id = id
+        }
+        setName(name){
+            this.name = name
+        }
+        setAge(age){
+            this.age=age
+        }
+        setDate(date){
+            this.date =date
+        }
+    }
+
+   let student = new Student(1,"Hoang",18,"30/03/2006");
+    let student1 = new Student(2,"Viet",18,"30/03/2006")
+    let studentList = [student,student1];
+    display()
+
+    function display(){
+        let table = `
+        <table border="1">
+         <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Date</th>
+    </tr>
+`
+        for (let i = 0; i < studentList.length; i++) {
+            table+=`
+              <tr>
+        <td>${studentList[i].id}</td>
+        <td>${studentList[i].name}</td>
+        <td>${studentList[i].age}</td>
+        <td>${studentList[i].date}</td>
+    </tr>
+            `
+        }
+        document.getElementById("input").innerHTML = table
+    }
+
+</script>
+</html>

@@ -6,19 +6,14 @@
 </head>
 <body>
 <script>
-    function checkString(str){
+    function checkString(str) {
         let arr = ''
-        for (let i = 0;i<str.length;i++){
-            if (str.length===1){
-                arr =str[0]
-            }else if (str.length>1){
-            for (let i =0;i<str.length;i++){}
-            arr+= str[i][0]
-            }
+        for (let i = 0; i < str.length; i++) {
+            arr += str[i][0]
         }
         document.write(arr)
     }
-    let array = ["Hoàng","Đình","Việt"];
+    let array = ["Hoàng", "Đình", "Việt"];
     checkString(array)
 </script>
 </body>

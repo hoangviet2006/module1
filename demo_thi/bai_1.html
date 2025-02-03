@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number) || number === "" || number < 0 || number >= 50 || parseInt(number)!==number) {
+        number = prompt("Nhập lại độ dài mảng")
+    }
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let so = prompt("Nhập vào phần tử thứ: " + i);
+        while (isNaN(so) || so === "") {
+            so = prompt("Nhap lai phan tu thu: " + i)
+        }
+        arr.push(Number(so))
+    }
+    let chan = 0
+    let le = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+            chan += arr[i]
+        } else {
+            le += arr[i]
+        }
+    }
+    let result = chan - le;
+    alert(result)
+
+</script>
+</body>
+</html>

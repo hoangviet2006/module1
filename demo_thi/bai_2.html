@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function checkString(str) {
+        let count = 0
+        let count1 = 0
+        let arr = []
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toUpperCase()) {
+                count++
+            } else {
+                count1++
+            }
+            if (str === "") {
+                return arr = [0, 0]
+            }
+
+        }
+        arr.push(count, count1);
+        alert(arr)
+    }
+
+    let string = prompt("Nhap chuoi");
+    for (let i = 0; i < string.length; i++) {
+        while (string[i] === " " || !isNaN(string)) {
+            string = prompt("Nhap lai");
+        }
+    }
+    checkString(string)
+</script>
+</body>
+</html>

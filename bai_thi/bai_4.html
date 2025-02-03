@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addPhone()">Thêm Sản phẩm</button>
+<p id="input"></p>
+<script>
+    class Phone {
+        constructor(id, name, company, price) {
+            this.id = id;
+            this.name = name;
+            this.company = company;
+            this.price = price;
+
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setCompany(company) {
+            this.company = company;
+        }
+
+        getCompany() {
+            return this.company;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+        toString() {
+            return `id: ${this.id} name: ${this.name} company: ${this.company} price: ${this.price}`;
+        }
+
+    }
+
+    let phone = new Phone("Id01", "Iphone", "Apple", 600000);
+    let phone1 = new Phone("Id02", "Nokia", "Androi", 700000);
+    let phoneList = [phone, phone1];
+    display();
+
+
+
+    function addPhone() {
+        let id = prompt("Nhập Id điện thoại");
+        while (!isNaN(id) || id === "") {
+            id = prompt("Nhập lại id điện thoại");
+        }
+        let name = prompt("Nhập tên sản phẩm");
+        while (!isNaN(name) || name === "") {
+            name = prompt("Nhập lại tên sản pham");
+        }
+        let company = prompt("Nhập vào hãng sản xuất");
+        while (company === "" || !isNaN(company)) {
+            company = prompt("Nhập lại hãng sản xuất");
+        }
+        let price = prompt("Nhập gia sản phẩm ");
+        while (price === "" || isNaN(price)) {
+            price = prompt("Nhập lại  giá sản pham");
+        }
+        let phone = new Phone(id, name, company, price);
+        phoneList.push(phone);
+        display();
+    }
+
+    function display() {
+        phoneList.sort((a, b) => a.name.localeCompare(b.name));
+        let tableString = `
+        <table border="1">
+            <tr>
+                <th>Mã Điện Thoại</th>
+                <th>Tên</th>
+                <th>Hãng Sản Xuất</th>
+                <th>Gia</th>
+            </tr>`
+
+        for (let i = 0; i < phoneList.length; i++) {
+            tableString += `
+            <tr>
+                    <td>${phoneList[i].id}</td>
+                    <td>${phoneList[i].name}</td>
+                    <td>${phoneList[i].company}</td>
+                    <td>${phoneList[i].price}</td>
+
+             </tr>`
+        }
+        document.getElementById("input").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>

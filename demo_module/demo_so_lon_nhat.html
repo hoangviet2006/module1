@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function findMaxNumber(numberString) {
+        if (numberString.length !==4) {
+            return "-1";
+        }
+        let maxNumber = "0";
+        for (let i = 0; i < numberString.length; i++) {
+            let newNumber = numberString.slice(0, i) + numberString.slice(i + 1);
+            if (newNumber > maxNumber) {
+                maxNumber = newNumber;
+            }
+        }
+        return maxNumber;
+    }
+    alert(findMaxNumber("1234"));
+</script>
+</body>
+</html>

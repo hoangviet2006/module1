@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNumber(a, b) {
+        let UCLN;
+        let BCNN;
+        if (a < b) {
+            for (let i = 0; i < a; i++) {
+                if (a % i === 0 && b % i === 0){
+                    UCLN=i
+                }
+            }
+        }else {
+            for (let i = 0; i < b; i++) {
+                if (a % i === 0 && b % i === 0){
+                    UCLN=i
+                }
+            }
+        }
+        BCNN = Math.abs(a*b)/UCLN;
+        console.log("Ước chung lon nhat là: "+UCLN);
+        console.log("Boi chung nho nhat là: "+BCNN);
+    }
+    checkNumber(6,5)
+</script>
+</body>
+</html>

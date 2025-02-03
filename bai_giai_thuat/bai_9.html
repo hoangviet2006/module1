@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let dao;
+        let hoa;
+        let thuong;
+        for (let i = 0; i < str.length; i++) {
+            dao = str.split("").reverse();
+            hoa = str.toUpperCase();
+            thuong = str.toLowerCase()
+        }
+         alert(dao);
+         alert(hoa);
+         alert(thuong);
+        let arr = str.split("")
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 'a' && arr[i] <= 'z') {
+                arr[i] = arr[i].toUpperCase();
+
+            }else {
+                arr[i] = arr[i].toLowerCase();
+            }
+        }
+        return arr.join("");
+
+
+    }
+    let result = checkString("jddhvHHvv")
+    alert(result)
+</script>
+</body>
+</html>

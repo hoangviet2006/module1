@@ -7,28 +7,26 @@
 <body>
 <script>
     let a = +prompt(" Nhập vào độ dài mảng");
-    while (isNaN(a) || a <= 0) {
+    while (isNaN(a) || a <= 0|| a==="") {
         a = +prompt("nhập lai");
     }
     let arr = []
     for (let i = 1; i <= a; i++) {
         nhapSo = +prompt("nhập phần tử thứ : " + i)
+        while (nhapSo===""||isNaN(nhapSo))
         arr.push(Number(nhapSo))
     }
-
-
     let check = true;
-
     function kiemTra() {
         for (let i = 2; i < arr.length; i++) {
             if (arr[i] !== arr[i - 1] + arr[i - 2]) {
                 check = false;
-                return;
+                break
             }
         }
         if (check) {
             alert("mảng là dãy fibonaxi")
-        } else if (check===true) {
+        } else  {
             alert("mảng khong phai là dãy fibonaxi")
         }
     }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number) || number === "") {
+        number = prompt("nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let so = prompt("Nhập vào phần tử thứ: " + i);
+        while (isNaN(so) || so === "") {
+            so = prompt("Nhập lại phần tử  thứ: " + i)
+        }
+        arr.push(so)
+    }
+    function Number(num) {
+        let count = 0;
+        let count1 = 0
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] % 2 === 0) {
+                count++
+            } else {
+                count1++
+            }
+        }
+        if (num.length === count) {
+            alert("1")
+        } else if (num.length === count1) {
+            alert("0")
+        } else {
+            alert("-1")
+        }
+    }
+    Number(arr)
+</script>
+</body>
+</html>

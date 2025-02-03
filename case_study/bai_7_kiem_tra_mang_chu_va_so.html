@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number) || number === "") {
+        number = prompt("nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let so = prompt("Nhập vào phần tử thứ: " + i);
+        while (so === "") {
+            so = prompt("Nhập lại phần tử  thứ: " + i)
+        }
+        arr.push(so)
+    }
+
+    function checkString(str) {
+        let count1 = 0;
+        let count2 = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (!isNaN(str[i]) && str[i] !== "") {
+                count1++
+            } else {
+                count2++
+            }
+        }
+        if (str.length === count1) {
+            alert("0")
+        } else if (str.length === count2) {
+            alert("1")
+        } else {
+            alert(-1)
+        }
+    }
+
+    checkString(arr)
+
+</script>
+</body>
+</html>

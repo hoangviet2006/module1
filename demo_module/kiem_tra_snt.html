@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kiểm tra số nguyên tố</title>
 </head>
 <body>
 <script>
-    let a = prompt("Nhập số cần kiểm tra");
-    let check = true;
-    for (let i = 0; i < a; i++) {
-        if (a === 2) {
-            check = true;
-        } else {
-            for (let j = 2; j < i; j++) {
-                if (a % j === 0) {
-                    check = false;
-                    break;
-                }
+    let number = prompt("Nhập vào độ dài mảng:");
+    while (isNaN(number) || number === "" || number <= 0) {
+        number = prompt("Độ dài mảng không hợp lệ. Vui lòng nhập lại:");
+    }
+
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let so = prompt("Nhập phần tử thứ " + (i + 1) + ":");
+        arr.push(Number(so));
+    }
+
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function checkPrimeNumbers(array) {
+        let primeArray = [];
+        for (let i = 0; i < array.length; i++) {
+            if (isPrime(array[i])) {
+                primeArray.push(array[i]);
             }
         }
+        alert("Các số nguyên tố trong mảng: " + primeArray.join(", "));
     }
-    if (check) {
-        alert(a + " là Số Nguyên  Tố")
-    } else {
-        alert(a + " Không Phải Là Số Nguyên Tố")
-    }
+
+    checkPrimeNumbers(arr);
 </script>
 </body>
 </html>

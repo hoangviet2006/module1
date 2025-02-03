@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt("Nhập vào độ dài mảng");
+    while (isNaN(num) || num === "") {
+        num = prompt("Nhâp lại độ dài mảng");
+    }
+
+    let arr = [];
+    for (let i = 0; i < num; i++) {
+        let so = prompt("Nhập phần tử  thu: " + i)
+        while (isNaN(so) || so === "") {
+            so = prompt("nhập lại")
+        }
+        arr.push(so)
+    }
+    let count = 0;
+    let count1 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            count++
+        } else {
+            count1++
+        }
+    }
+    if (count === count1) {
+        alert("Mảng co phân tử  chẳn bẳng phần tử lẻ")
+    } else {
+        alert("Mang  co phan tử chẳn và phan tử le khong bằng nhau")
+    }
+</script>
+</body>
+</html>

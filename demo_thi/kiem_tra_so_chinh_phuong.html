@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /// viet 1 hàm  voi 1 tham so truyen vào la mọt so
+    // kiem tra so do co phai la so chinh phuong hay khong
+
+
+    function Number(num) {
+        let check = true
+        let canBacHai = Math.sqrt(num);
+        if (canBacHai % 1 !== 0) {
+            check = false
+        }
+        if (check) {
+            alert("OK")
+        } else {
+            alert("NO")
+        }
+    }
+    Number(4)
+</script>
+</body>
+</html>

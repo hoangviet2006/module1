@@ -16,16 +16,16 @@
         arr.push(nhapPhanTu);
     }
     let check = true
-    for (let i = 0; i < arr.length-1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
         if (arr[i + 1] % arr[i] !== 0) {
             check = false;
             break;
         }
     }
     if (check) {
-        document.write(arr+"  OK")
+        document.write(arr + "  OK")
     } else {
-        document.write(arr+"  No")
+        document.write(arr + "  No")
     }
 </script>
 </body>

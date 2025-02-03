@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng: ");
+    while (isNaN(number) || number === "") {
+        number = prompt("Nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let So = prompt("Nhập phần tử thu : " + i);
+        while (So === "" || isNaN(So)) {
+            So = prompt("Nhập lại phần tử thứ: " + i);
+        }
+        arr.push(So);
+    }
+    let check = true
+    let hieuSo = arr[1] - arr[0];
+    for (let i = 0; i < arr.length-1; i++) {
+        if (arr[i + 1] - arr[i] !== hieuSo) {
+            check = false;
+        }
+    }
+    if (check) {
+        alert("OK");
+    } else {
+        alert("No");
+    }
+</script>
+</body>
+</html>

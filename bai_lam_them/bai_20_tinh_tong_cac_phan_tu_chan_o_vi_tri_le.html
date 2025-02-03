@@ -7,26 +7,25 @@
 <body>
 <script>
     let number = +prompt("Nhập Độ dài mảng");
-    while (isNaN(number) || number % 2 !== 0) {
+    while (isNaN(number) || number==="") {
         number = +prompt("Nhập Lại độ dài mảng");
     }
     let arr = [];
     for (let i = 0; i < number; i++) {
         let nhapSo = +prompt("Nhập phần tử thứ: " + i);
+        while (isNaN(nhapSo)||nhapSo===""){
+            nhapSo=prompt("nhập lại phần tử thứ: "+i)
+        }
+
         arr.push(nhapSo);
     }
-
-    function kiemTra() {
-        let sum = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 === 0 && i % 2 !== 0) {
-                sum += arr[i];
-            }
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0 && i % 2 !== 0) {
+            sum += arr[i];
         }
-        return sum;
     }
-    let s = kiemTra();
-    alert(s)
+    alert(sum)
 </script>
 </body>
 </html>

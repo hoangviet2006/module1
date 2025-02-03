@@ -6,30 +6,32 @@
 </head>
 <body>
 <script>
-  let number = prompt("Nhập vào độ dài mảng");
-  while (number<=0){
-    number=prompt("Nhập lại");
-  }
-  let arr=[];
-  for (let i = 0;i<number;i++){
-    let nhapPhanTu = prompt("Nhập phần tử thứ: "+i);
-    arr.push(nhapPhanTu);
-  }
-  function checkArray(array){
-    let check = true;
-    for (let i= 0; i<array.length;i++){
-      if (isNaN(array[i])){
-        check=false;
-        break;
-      }
+    let number = prompt("Nhập vào độ dài mảng");
+    while (number <= 0) {
+        number = prompt("Nhập lại");
     }
-    if (check){
-      alert("Ok")
-    }else {
-      alert("False")
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let nhapPhanTu = prompt("Nhập phần tử thứ: " + i);
+        arr.push(nhapPhanTu);
     }
-  }
-  checkArray(arr)
+
+    function checkArray(array) {
+        let check = true;
+        for (let i = 0; i < array.length; i++) {
+            if (isNaN(array[i])) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            alert("Ok")
+        } else {
+            alert("False")
+        }
+    }
+
+    checkArray(arr)
 </script>
 </body>
 </html>

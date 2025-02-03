@@ -11,20 +11,20 @@
         number = prompt("Nhập lại")
     }
     let check = true
-        if (number === 2) {
-            check = true;
-        } else {
-            for (let j = 2; j < number; j++) {
-                if (number % j === 0) {
-                    check = false;
-                    break;
-                }
+    if (number === 2) {
+        check = true;
+    } else {
+        for (let j = 2; j < number; j++) {
+            if (number % j === 0) {
+                check = false;
+                break;
             }
         }
-        if (check){
-            alert(number + " là số nguyen tố")
-        }else {
-            alert(number + " không phải là số nguyên tố")
+    }
+    if (check) {
+        alert(number + " là số nguyen tố")
+    } else {
+        alert(number + " không phải là số nguyên tố")
     }
 </script>
 </body>

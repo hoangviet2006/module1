@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào một số");
+    alert(findMaxNumber(number));
+
+    function findMaxNumber(n) {
+        while (isNaN(n) || n === "") {
+            n = prompt("Nhập lại một số");
+        }
+        if (n.length !== 4) return -1
+        let result = 0;
+        for (let index in n) {
+            let temp = n.slice(0, index) + n.slice(index + 1);
+            if (parseInt(temp) > result) result = temp
+        }
+        return result
+    }
+</script>
+</body>
+</html>

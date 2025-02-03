@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-
 <script>
     function timNgoiSao(){
         let ngoiSao = [ "Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
@@ -13,7 +12,7 @@
         let nhapNgoiSao = prompt("Nhập vào một ngôi sao");
         let timIndex = -1
         for (let i = 0; i < ngoiSao.length; i++) {
-            if (nhapNgoiSao==ngoiSao[i]){
+            if (nhapNgoiSao===ngoiSao[i]){
                 timIndex = i
                 break;
             }

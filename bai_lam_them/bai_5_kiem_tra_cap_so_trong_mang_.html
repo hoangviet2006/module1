@@ -13,23 +13,27 @@
     let arr = [];
     for (let i = 0; i < number; i++) {
         let nhapSo = prompt("nhập phần tử thứ: " + i)
+        while (isNaN(nhapSo) || nhapSo === "") {
+            nhapSo = prompt("Nhập lại ")
+        }
         arr.push(nhapSo)
     }
 
     function kiemTra() {
         let check = true
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > arr[i + 1]){
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr[i] > arr[i + 1]) {
                 check = false;
                 break;
             }
         }
         if (check) {
-            alert("OK")
+            alert("OK");
         } else {
-            alert("No")
+            alert("No");
         }
     }
+
     kiemTra();
 </script>
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArray(array1, array2) {
+        let arr = [];
+        for (let i = 0; i < array1.length; i++) {
+            let count = 0
+            if (array2.includes(array1[i])) {
+                arr.push(array1[i]);
+            }
+            for (let j = 0; j < array2.length; j++) {
+                if (array1[i] === array2[j]) {
+                    count++
+                }
+            }
+
+        }
+        console.log(arr);
+    }
+    let array1 = [1, 6];
+    let array2 = [4, 6, 5, 7, 8, 2, 1, 3, 6, 9];
+    checkArray(array1, array2);
+</script>
+</body>
+</html>

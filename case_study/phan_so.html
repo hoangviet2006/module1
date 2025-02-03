@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function find(x) {
+        let arr = x.split("/");
+        let UCLN = 0
+        if (arr.length === 2 && arr[0] % 1 === 0 && arr[1] % 1 === 0 && arr[1] != 0) {
+            let tuSo = parseInt(arr[0]);
+            let mauSo = parseInt(arr[1]);
+            if (arr[0] < arr[1]) {
+                for (let i = 0; i <= arr[0]; i++) {
+                    if (tuSo % i === 0 && mauSo % i === 0) {
+                        UCLN = i;
+                    }
+                }
+            } else {
+                for (let i = 0; i <= arr[1]; i++) {
+                    if (tuSo % i === 0 && mauSo % i === 0) {
+                        UCLN = i;
+                    }
+                }
+            }
+            alert("đây là phân số: " + tuSo / UCLN + "/" + mauSo / UCLN);
+        } else {
+            alert("Đây không phải phân số");
+        }
+    }
+    let number = prompt("Nhập vào một phân số")
+    find(number)
+</script>
+</body>
+</html>

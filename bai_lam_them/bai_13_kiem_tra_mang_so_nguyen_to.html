@@ -7,37 +7,32 @@
 <body>
 <script>
     let number = +prompt("Nhập  vào độ dài mảng");
-    while (number <= 0 || parseInt(number) !== number) {
+    while (number <= 0 || parseInt(number) !== number || number === "") {
         number = +prompt("nhập lại")
     }
     let arr = []
     for (let i = 1; i <= number; i++) {
-        let nhapSo = prompt("Nhập phần tử thứ: " + i)
-        arr.push(nhapSo)
+        let nhapSo = +prompt("Nhập phần tử thứ: " + i)
+        arr.push((nhapSo))
     }
-    kiemTra();
-
-    function kiemTra() {
-        check = true
+    function checkSNT(arr) {
         for (let i = 0; i < arr.length; i++) {
-            let phanTu = arr[i]
-            if (phanTu == 2) {
-                alert(phanTu + " là  số nguyên tố");
-                break;
-            } else {
-                for (let j = 2; j < i; j++) {
-                    if (phanTu % j === 0) {
-                        check = false;
-                        break;
-                    }
+            let num = arr[i];
+            if (num < 2) {
+                return false;
+            }
+            for (let j = 2; j < num; j++) {
+                if (num % j === 0) {
+                    return false;
                 }
             }
         }
-        if (check) {
-            alert("Mảng là số nguyên tố")
-        } else {
-            alert("Mảng không phải là số nguyên tố")
-        }
+        return true;
+    }
+    if (checkSNT(arr)){
+        alert("mảng là số nguyên tố")
+    }else {
+        alert("mảng không phải là số nguyên to")
     }
 
 </script>

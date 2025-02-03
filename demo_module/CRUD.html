@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="addStudent()">Thêm Học Viên</button>
+<button onclick="editStudent()">Chỉnh Sửa Học Viên</button>
+<button onclick="deleteStudent()">Xóa Học Viên</button>
+<p id="input"></p>
+<script>
+    class Student {
+        constructor(id, name, clas, date,) {
+            this.id = id;
+            this.name = name;
+            this.clas = clas;
+            this.date = date;
+        }
+
+        setID(id) {
+            this.id = id
+        }
+
+        setNAME(name) {
+            this.name = name;
+        }
+
+        setCLAS(clas) {
+            this.clas = clas;
+        }
+
+        setDATE(date) {
+            this.date = date
+        }
+    }
+
+    let student = new Student(1, "Hoàng", "C10", 30032006);
+    let student1 = new Student(2, "Đình", "C11", 30032006);
+    let student2 = new Student(3, "Việt", "C12", 30032006);
+    let studentList = [student, student1, student2]
+    display();
+
+    function addStudent() {
+        let id = prompt("Nhập id học viên")
+        while (isNaN(id) || id === "") {
+            id = prompt("Nhap lại id học viên")
+        }
+        let name = prompt("Nhập tên học viên");
+        while (name === "" || !isNaN(name)) {
+            name = prompt("Nhập lại tên học viên");
+        }
+        let clas = prompt("Nhập lớp của học viên");
+        while (clas === "") {
+            clas = prompt("Nhập lại lớp của học viên");
+        }
+        let date = prompt("Nhập ngày sinh của học viên");
+        while (isNaN(date) || date === "") {
+            date = prompt("Nhập lại ngày sinh của học viên");
+        }
+        let student = new Student(id, name, clas, date);
+        studentList.push(student);
+        display();
+
+
+    }
+
+    function editStudent() {
+        let timId = prompt("Nhập ID cần chỉnh sửa");
+        while (timId === "" || isNaN(timId)) {
+            timId = prompt("Nhap lại id")
+        }
+        let timIndex = -1
+        for (let i = 0; i < studentList.length; i++) {
+            if (timId == studentList[i].id) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let name = prompt("Nhập tên mới của học viên");
+            while (name === "" || !isNaN(name)) {
+                name = prompt("Nhập lại tên mới của học viên");
+            }
+            let clas = prompt("Nhập lớp mới của học viên");
+            while (clas === "") {
+                clas = prompt("Nhập lại lớp  mới của học viên");
+            }
+            let date = prompt("Nhập ngày sinh mới của học viên");
+            while (isNaN(date) || date === "") {
+                date = prompt("Nhập lại ngày sinh mới của học viên");
+            }
+            studentList[timIndex].setNAME(name);
+            studentList[timIndex].setCLAS(clas);
+            studentList[timIndex].setDATE(date);
+            display();
+        } else {
+            alert("Không tìm thấy học viên");
+        }
+    }
+
+    function deleteStudent() {
+        let timId = prompt("Nhập ID cần xóa");
+        while (timId === "" || isNaN(timId)) {
+            timId = prompt("Nhap lại id");
+        }
+
+        let timIndex = -1
+        for (let i = 0; i < studentList.length; i++) {
+            if (timId == studentList[i].id) {
+                timIndex = i;
+                break;
+            }
+        }
+        if (timIndex !== -1) {
+            let conf = confirm("Bạn có muốn xóa học vên");
+            if (conf) {
+                studentList.splice(timIndex, 1);
+                display()
+            }
+        } else {
+            alert("Không tìm thấy học Vien");
+        }
+    }
+
+
+    function display() {
+        let tableString = `<table border="1">
+        <tr>
+                 <th>ID</th>
+                 <th>Tên</th>
+                 <th>Lop</th>
+                 <th>Ngày Sinh</th>
+        </tr>
+`;
+        for (let i = 0; i < studentList.length; i++) {
+            tableString += `
+        <tr>
+                <td>${studentList[i].id}</td>
+                <td>${studentList[i].name}</td>
+                <td>${studentList[i].clas}</td>
+                <td>${studentList[i].date}</td>
+        </tr>
+            `
+        }
+        document.getElementById("input").innerHTML = tableString;
+
+    }
+
+</script>
+</body>
+</html>

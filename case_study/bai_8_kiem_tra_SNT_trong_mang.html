@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập vào độ dài mảng");
+    while (isNaN(number) || number === "") {
+        number = prompt("nhập lại độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+        let so = prompt("Nhập vào phần tử thứ: " + i);
+        while (so === "") {
+            so = prompt("Nhập lại phần tử  thứ: " + i)
+        }
+        arr.push(so)
+    }
+
+    function SoNT(num) {
+        let check = true;
+        if (num < 2) {
+            check = false
+        } else {
+            for (let j = 2; j < num.length; j++) {
+                if (num % j === 0) {
+                    check = false;
+                    break;
+                }
+            }
+            return true
+        }
+    }
+
+    function kiemTra(arr) {
+       let count =0
+        for (let i = 0; i < arr.length; i++) {
+            if (SoNT(arr[i])) {
+                count++
+            }
+        }
+        if (arr.length===count) {
+            alert("Ok")
+        } else {
+            alert("NO")
+        }
+    }
+
+    kiemTra(arr)
+</script>
+</body>
+</html>

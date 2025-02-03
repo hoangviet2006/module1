@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addCompany()">Them Sản Phẩm</button>
+<p id="result"></p>
+<script>
+    class Machine {
+        constructor(id, name, company, price) {
+            this.id = id;
+            this.name = name;
+            this.company = company;
+            this.price = price;
+        }
+
+        setId(id) {
+            this.id = id
+        }
+
+        getId() {
+            return this.id
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setCompany(company) {
+            this.company = company
+        }
+
+        getCompany() {
+            return this.company;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price
+        }
+    }
+
+    let machine = new Machine("A", "MacBook", "Apple", 20000000);
+    let machine1 = new Machine("B", "ASUS", "GG", 30000000);
+    let machineList = [machine, machine1]
+    display();
+
+
+    function addCompany() {
+        let id = prompt("Nhập mã máy")
+        while (!isNaN(id) || id === "") {
+            id = prompt("Nhập lại   ma máy")
+        }
+        let name = prompt("Nhập tên máy");
+        while (!isNaN(name) || name === "") {
+            name = prompt("Nhập lại tên máy")
+        }
+        let company = prompt("Nhập tên hãng của máy");
+        while (!isNaN(company) || company === "") {
+            company = prompt("Nhập lại tên hãng")
+        }
+        let price = prompt("Nhập giá của sản phẩm")
+        while (isNaN(price) || price === "") {
+            price = prompt("Nhập lại giá sản phẩm")
+        }
+        let machine = new Machine(id, name, company, price);
+        machineList.push(machine);
+        display()
+    }
+
+
+    function display() {
+        let table = `<table border="1">
+<tr>
+    <th>Mã Máy</th>
+    <th>Tên Máy</th>
+    <th>Tên Hãng Sản Xuất</th>
+    <th>Giá Bán</th>
+  </tr>
+`
+        for (let i = 0; i < machineList.length; i++) {
+            table += `
+    <tr>
+            <td>${machineList[i].id}</td>
+            <td>${machineList[i].name}</td>
+            <td>${machineList[i].company}</td>
+            <td>${machineList[i].price}</td>
+     </tr>
+      `
+        }
+        document.getElementById("result").innerHTML = table;
+    }
+</script>
+</body>
+</html>
