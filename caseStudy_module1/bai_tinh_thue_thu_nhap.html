@@ -11,6 +11,7 @@
         number = prompt("Nhập lại mức lương của bạn")
     }
     let thue = 0
+<<<<<<< HEAD
 
     if (number <= 15000000) {
         thue = number * (20 / 100);
@@ -25,6 +26,22 @@
         alert("Thuế phải đóng cho mức lương " + number + "  của bạn : " + thue)
 
 
+=======
+    for (let i = 0; i < number; i++) {
+        if (number<=15000000){
+             thue = number*(20/100);
+            alert(thue);
+            break
+        }else if (number>7000000||number<15000000){
+             thue = number*(15/100);
+            alert(thue);
+            break
+        }else if (number<7000000) {
+             thue  = number*(5/100);
+            alert(thue)
+            break
+        }
+>>>>>>> 4cb59b498ca1d6c5bdb9de19879b6b013d95cfb0
     }
 </script>
 </body>

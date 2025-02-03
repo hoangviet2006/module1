@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e273d6a-2060-43ce-b4af-e8894d9134d9" name="Changes" comment="" />
+    <list default="true" id="9e273d6a-2060-43ce-b4af-e8894d9134d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_15/bai_tap/bai_taptaovaosudungham01/bai_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_15/bai_tap/bai_taptaovaosudungham01/bai_5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudy_module1/OOP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudy_module1/OOP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudy_module1/bai_tinh_thue_thu_nhap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudy_module1/bai_tinh_thue_thu_nhap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16/bai_xay_dung_mo_ta_doC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss16/bai_xay_dung_mo_ta_doC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2sVgVUFXSCONq3GoD5Tc4zRR6ge" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,8 +39,12 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/codegym/module1/mmmmmm",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "D:/codegym/module1/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738546179447</updated>
       <workItem from="1738546180464" duration="21000" />
+      <workItem from="1738546941082" duration="689000" />
     </task>
     <servers />
   </component>

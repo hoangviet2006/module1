@@ -7,8 +7,14 @@
 <body>
 <script>
   class NhietDo{
+<<<<<<< HEAD
     constructor(doC) {
       this.doC =doC;
+=======
+    doC;
+    constructor(doC) {
+      this.doC =doC
+>>>>>>> 4cb59b498ca1d6c5bdb9de19879b6b013d95cfb0
     }
     setdoC(doC){
       this.doC =doC
@@ -24,9 +30,18 @@
     }
   }
   let nhietDo = new NhietDo(20);
+<<<<<<< HEAD
   document.write(nhietDo.chuyenSangF()+"<br>");
   nhietDo.setdoC(20);
   document.write(nhietDo.chuyenSangK());
+=======
+  let doiSangF = nhietDo.chuyenSangF();
+  document.write(doiSangF+"<br>");
+  nhietDo.setdoC(30);
+  document.write(nhietDo.chuyenSangF())
+   document.write(nhietDo.getdoC())
+
+>>>>>>> 4cb59b498ca1d6c5bdb9de19879b6b013d95cfb0
 
 </script>
 </body>
